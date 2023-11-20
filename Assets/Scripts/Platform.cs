@@ -34,6 +34,8 @@ public class Platform : ObjectMovement
         else if (!isGoingRight)
         {
 
+            platform.transform.Translate(-move * moveSpeed * Time.deltaTime);
+            
         }
 
     }
