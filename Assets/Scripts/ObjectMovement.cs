@@ -10,6 +10,12 @@ public class ObjectMovement : MonoBehaviour
     [SerializeField] private GameObject startPoint;
     [SerializeField] private GameObject endPoint;
 
+    //Which direction is the object moving
+    protected bool isGoingRight = true;
+
+    //How fast does the object move?
+    protected float moveSpeed;
+
     //The positions of the stat and end
     protected Transform startLocation;
     protected Transform endLocation;
@@ -22,16 +28,20 @@ public class ObjectMovement : MonoBehaviour
         GetEndLocation();
     }
 
-    protected void GetStartLocation()
+    protected Transform GetStartLocation()
     {
         //Getting the Start location
         startLocation = startPoint.GetComponent<Transform>();
+
+        return startLocation;
     }
 
-    protected void GetEndLocation()
+    protected Transform GetEndLocation()
     {
         //Getting the End location
         endLocation = endPoint.GetComponent<Transform>();
+
+        return endLocation;
     }
 
 }
