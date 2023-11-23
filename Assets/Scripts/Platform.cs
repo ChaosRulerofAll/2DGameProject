@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Platform : ObjectMovement
@@ -27,15 +28,19 @@ public class Platform : ObjectMovement
         
         if (isGoingRight)
         {
-            
+            //Debug.Log("isGoingRight");
             platform.transform.Translate(move * moveSpeed * Time.deltaTime);
-
         }
         else if (!isGoingRight)
         {
-
+            //Debug.Log("isNotGoingRight");
             platform.transform.Translate(-move * moveSpeed * Time.deltaTime);
-            
+        }
+
+        if (GetStartLocation().position.y > platform.transform.position.y 
+            || platform.transform.position.y > GetEndLocation().position.y)
+        {
+            isGoingRight = !isGoingRight;
         }
 
     }
