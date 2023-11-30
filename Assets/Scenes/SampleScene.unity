@@ -1076,10 +1076,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092753858}
-  - component: {fileID: 1092753856}
   - component: {fileID: 1092753859}
   - component: {fileID: 1092753860}
   - component: {fileID: 1092753861}
+  - component: {fileID: 1092753862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1087,26 +1087,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1092753856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092753855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ec3f2725c409654e80601f0767acf66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  accelerationPower: 23
-  jumpPower: 410
-  groundCheck: {fileID: 492400155}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  melonCount: 0
-  UI: {fileID: 255135518}
 --- !u!4 &1092753858
 Transform:
   m_ObjectHideFlags: 0
@@ -1139,7 +1119,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
@@ -1233,6 +1213,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.5}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1092753862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092753855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4005d363e39652438273840756df410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accelerationPower: 30
+  jumpPower: 700
+  springPower: 2000
+  groundCheck: {fileID: 492400155}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  springLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  SpawnPoint: {x: -7.5, y: -3}
+  melonCount: 0
+  UI: {fileID: 255135518}
+  Watermelon: {fileID: 1567287522}
 --- !u!1 &1384954337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1463,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567287522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b3a8b377a4cc874bb8fafd5b3a0c5f4, type: 3}
+  m_Script: {fileID: 11500000, guid: deca8a255a4af8c479087de3c94e0ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &999839136762100420
