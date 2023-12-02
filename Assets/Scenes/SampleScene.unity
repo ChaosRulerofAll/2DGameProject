@@ -876,6 +876,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5861513613515586910, guid: a831dacaa0c94514fabbbeb80ff9836e, type: 3}
+      propertyPath: faze
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861513613515586910, guid: a831dacaa0c94514fabbbeb80ff9836e, type: 3}
+      propertyPath: isGoingRight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7278048625014966190, guid: a831dacaa0c94514fabbbeb80ff9836e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -1077,9 +1085,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1092753858}
   - component: {fileID: 1092753859}
-  - component: {fileID: 1092753860}
-  - component: {fileID: 1092753861}
   - component: {fileID: 1092753862}
+  - component: {fileID: 1092753863}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1133,86 +1140,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &1092753860
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092753855}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!58 &1092753861
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092753855}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.5}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &1092753862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,19 +1153,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelerationPower: 30
-  jumpPower: 700
+  jumpPower: 1100
   springPower: 2000
   groundCheck: {fileID: 492400155}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  fallableLayer:
+    serializedVersion: 2
+    m_Bits: 512
   springLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   SpawnPoint: {x: -7.5, y: -3}
+  player: {fileID: 1092753855}
   melonCount: 0
   UI: {fileID: 255135518}
   Watermelon: {fileID: 1567287522}
+--- !u!70 &1092753863
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092753855}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.25}
+  m_Size: {x: 1, y: 1.5}
+  m_Direction: 0
 --- !u!1 &1384954337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1432,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deca8a255a4af8c479087de3c94e0ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &314764535600600533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2366086673581940089, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205102969708304897, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
+      propertyPath: m_Name
+      value: Fall Throughable Platform
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b81f7336f20a0d4469b586e05df06105, type: 3}
 --- !u!1001 &999839136762100420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1651,3 +1674,4 @@ SceneRoots:
   - {fileID: 911126340}
   - {fileID: 1649404936336527283}
   - {fileID: 2927240867833725090}
+  - {fileID: 314764535600600533}

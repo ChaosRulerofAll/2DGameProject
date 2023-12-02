@@ -210,6 +210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {fileID: 3861400311542385708}
   endPoint: {fileID: 6771915766329748093}
+  isGoingRight: 1
+  faze: 0
   platform: {fileID: 1548250505252539697}
 --- !u!1 &6771915766329748093
 GameObject:

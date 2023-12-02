@@ -24,6 +24,8 @@ public class Platform : ObjectMovement
         //Set the object at the start point
         //This was removed because what if you want an object out of faze of other objects
         //platform.GetComponent<Transform>().position = GetStartLocation().position;
+        platform.GetComponent<Transform>().position += (Vector3)move * Mathf.Sin(faze);
+        
 
         //How fast does it move?
         moveSpeed = 0.5f;

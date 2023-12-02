@@ -11,7 +11,7 @@ public class ObjectMovement : MonoBehaviour
     [SerializeField] private GameObject endPoint;
 
     //Which direction is the object moving
-    protected bool isGoingRight = true;
+    [SerializeField] protected bool isGoingRight = true;
 
     //How fast does the object move?
     protected float moveSpeed;
@@ -19,6 +19,9 @@ public class ObjectMovement : MonoBehaviour
     //The positions of the stat and end
     protected Transform startLocation;
     protected Transform endLocation;
+
+    //Faze
+    [SerializeField, Range(0f, 1.57f)] protected float faze;
 
 
     private void Start()
